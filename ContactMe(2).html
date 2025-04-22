@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Contact Me </title>
+    <!--Icons courtesy of Fonts Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .container {
+            padding: 20px;
+        }
+
+        /*CSS Styling for "topnav"= navigation bar.*/
+        .topnav {
+            overflow: hidden;
+            background-color: #F7F7F2;
+            /*navigation bar main color= baby powder white*/
+        }
+
+        .topnav a {
+            float: right;
+            color: #000000;
+            /*text color=black*/
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 18px
+        }
+
+        .topnav a:hover {
+            background-color: #2B9EB3;
+            /*hover color=moonstone blue*/
+            color: white;
+        }
+        .topnav a.active {
+            background-color: #F72631;
+            /*active color=imperial red*/
+            color: #000000;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        /*Responsive Navigation Bar CSS Styling for mobile devices.*/
+        
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {
+                display: none;
+            }
+
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        /*All other pages will be hidden and able to navigate by clicking the bars.*/
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+            }
+
+                .topnav.responsive a.icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+
+                .topnav.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: right;
+                }
+        }   
+
+        body {
+            margin: 0;
+            font-family: Georgia, serif;
+            background-color: #F72631;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        /*Input Box CSS Styling*/
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 3px solid #620408;
+            border-radius: 8px;
+            box-sizing: border-box;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            resize: none;
+        }
+
+        /*Submit Button CSS Styling*/
+        .button1 {
+            background-color: #FEA90B;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            align-self: center;
+        }
+
+        input[type=submit]:hover {
+            background-color: #8F5D00;
+        }
+        /*Footer CSS Styling*/
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #F96269;
+            color: white;
+            font-size: 13px;
+            line-height: 0.5;
+        }
+    </style>
+
+    <!--A way to check if forms processes fit requirements. If not, form is not submitted because it fails validation measures.-->
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", (event) => {
+            const contactForm = event.target
+            if (!validateContactForm(contactForm)) {
+                event.preventDefault();
+                alert('invalid input')
+            }
+        }
+    </script>
+
+    <!--Validation Form that checks for empty fields.-->
+    <script>
+        function validateForm(){
+            let x= document.forms["contactForm"]["fname"]["lname"]["emailaddr"].value;
+            if (x == ""){
+                alert("Please fill out this area.");
+                return false;
+            }
+        }
+        
+    </script>
+    
+
+</head>
+<body>
+
+    <header>
+
+        <!--Navigation Bar-->
+        <nav>
+            <div class="topnav">
+                <a href="index.html"> HOME </a>
+                <a href="AboutMe(2).html"> ABOUT ME </a>
+                <a class="active" href="ContactMe(2).html"> CONTACT ME </a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </nav>
+
+        <!--Header Top Left of Conbtact Me-->
+        <div class="header">
+            <h1 style="padding:20px"> Contact Me</h1>
+        </div>
+    </header>
+
+   
+    <div class="container">
+        <form name="contactForm" action="/submit-form" id="contactForm" method="POST" onsubmit="return validateForm()">
+            <label for="firstname"> First Name: </label>
+            <input type="text" id="firstname" class="form-input" name="fname" required/>
+               
+            <br />
+
+            <label for="lastname"> Last Name: </label>
+            <input type="text" id="lastname" class="form-input" name="lname" required/>
+
+            <br />
+
+            <label for="emailaddress"> Email Address: </label>
+            <input type="text" id="emailaddress" class="form-input" name="emailaddr" required />
+
+            <br />
+            <label for="message"> Message: </label>
+            <textarea id="message" name="message" class="form-input" style="height:300px"></textarea>
+
+            <br />
+            <button class="button button1" onclick="functionSubmit()"> Submit </button>
+        </form>
+    </div>
+   
+
+    <footer>
+        <p> Copyright &copy; 2025 | Brakittra Tobtaen</p>
+        <p> Disclaimer: This is a student project made for a web development course.</p>
+        <p> KSU is not directly affiliated with with this project.</p>
+    </footer>
+
+    <!--Javascript for the submit button popup message.-->
+    <script>
+        function functionSubmit() {
+            alert("Message Sent!");
+        }
+    </script>
+
+    <!--Javascript for Responsive Navigation Bar-->
+    <script>
+        function myFunction() {
+         var x = document.getElementById("myTopnav");
+         if (x.className === "topnav") {
+             x.className += "responsive";
+         } else {
+             x.className = "topnav";
+         }
+    }
+    </script>
+</body>
+</html>

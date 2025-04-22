@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> About Me </title>
+    <!--Icons courtesy of Fonts Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        /*Containter Parent & Children*/
+        .container {
+            display: grid;
+            grid-template-columns: 0.5fr 0.6fr 1.4fr 1.3fr 1fr;
+            grid-template-rows: 0.3fr 1.2fr 1.4fr 0.4fr;
+            gap: 30px 20px;
+            grid-auto-columns: 1fr;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "header header header header header"
+                "aside aside content content content"
+                "aside aside content content content"
+                "footer footer footer footer footer"
+        }
+
+        .header {
+            grid-area: header;
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        .aside {
+            grid-area: aside;
+            padding-left: 30px;
+            padding-top: 50px;
+        }
+
+        .content {
+            grid-area: content;
+        }
+
+
+        .footer {
+            grid-area: footer;
+            text-align: center;
+            padding-top: 90px;
+            padding: 3px;
+            background-color: #FDBE49;
+            color: white;
+            font-size: 13px;
+            line-height: 0.8;
+            bottom: 0;
+            width: 100%;
+            position: fixed;
+        }
+
+
+        /*CSS Styling for "topnav"= navigation bar.*/
+        .topnav {
+            overflow: hidden;
+            background-color: #F7F7F2;
+            /*navigation bar main color= baby powder white*/
+        }
+
+        .topnav a {
+            float: right;
+            color: #000000;
+            /*text color=black*/
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 18px
+        }
+
+        .topnav a:hover {
+            background-color: #F72631;
+            /*hover color=imperial red*/
+            color: white;
+        }
+
+        .topnav a.active {
+            background-color: #FCAB10;
+            /*active color=orange*/
+            color: #000000;
+        }
+
+        .topnav .icon {
+             display: none;
+        }
+
+        /*Responsive Grid CSS Styling for mobile devices.*/
+        @media only screen and (max-width:600px) {
+            .header {
+                grid-area: header;
+                align-self: center;
+                padding-top: 40px;
+            }
+
+            .aside {
+                grid-area: aside;
+            }
+            
+            /*Hides image if screen device is at most 600px.*/
+            .aside .aboutme {
+                 display: none;
+            }
+
+            .content {
+                grid-area: content;
+            }
+
+            .footer {
+                grid-area: footer;
+            }
+           
+            
+        }
+        /*Responsive Navigation Bar CSS Styling for mobile devices.*/
+        
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {
+                display: none;
+            }
+
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        /*All other pages will be hidden and able to navigate by clicking the bars.*/
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: right;
+            }
+        }   
+
+        body {
+            margin: 0;
+            font-family: Georgia, serif;
+            background-color: #FDA90D;
+        }
+
+        p {
+            margin-right: 40px;
+        }
+
+        img.aboutme {
+            border: 5px dashed #F62832;
+        }
+        
+    </style>
+</head>
+
+<body>
+        <!--Navigation Bar-->
+        <nav>
+            <div class="topnav" id="myTopnav">
+                <a href="index.html">HOME  </a>
+                <a class="active "href="AboutMe(2).html"> ABOUT ME </a>
+                <a href="ContactMe(2).html"> CONTACT ME </a>
+                <a href="javascript:void(0);" class="icon" onclick="topNav()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </nav>
+
+        <main>
+            <!--Parent Container-->
+            <div class="container">
+
+                <!--"About Me" header: Should be aligned in the middle.-->
+                <div class="header">
+                    <h1>About Me</h1>
+                </div>
+
+                <!--"Aside": Picture of myself goes here.-->
+                <div class="aside">
+                    <img src="homePage.jpg" alt="Me in New York (2023)" style="width:300px;height:500px" class="aboutme"/>
+                </div>
+
+                <!--"Content": Include content about my experiences, skills, and time at KSU.-->
+                <div class="content">
+                    <h3 style="color: #F62832;">My Time at KSU</h3>
+                    <p>
+                        Hello, I am Brakittra Tobtaen! I am currently an undergraduate student here at KSU and am majoring in Information Technology.
+                        I am 25 years old and have been a student at KSU since 2018. Wow that seems long doesn't it? Well let me explain how I've been a student here for so long.
+                        This all started when I was a freshman enrolling as an undergrad for Computer Science. I unfortunately spent 4 years in a program that just wasn't for me and
+                        wasted a bit of time trying to force myself to enjoy CS. Along the way, life happened as well and unfortunately I ran into personal difficulties that made
+                        schooling a bit hard. I made the switch to IT about 2 years ago and I'm grateful that I did! I enjoy this major much more
+                        and have become more successful in my classes. I'm still grateful for all the wonderful topics I've learned in CS and it has for sure helped me out in my IT journey.
+                        I'm expected to graduate in the Spring of 2026 and couldn't be more excited.
+                    </p>
+                    <br />
+                    <h3 style="color: #45B06A;">More About Me</h3>
+                    <p>
+                        Outside my time at KSU, I've dabbled outside with some jobs and hobbies. I currently work part time in a customer service job and have been doing so for 7 years. This job is
+                        my family business so I'm always heavily involved there. I also have volunteered at a couple of community events and for certain organizations. Doing these experiences have helped me
+                        gain knowledge about working with others and handling responsibilities. Within KSU though I have learned a variety of new skills from my classes like certain programming languages like
+                        C#, Java, and Python. I've also have learned about computing and networking topics like software engineering, SQL, computer organization/architecture, computer software and hardware, databases and more.
+                        Although it sounds like a lot, I haven't fully mastered these topics or skills and want to continue to learn them and apply them to real-world projects.
+                        I of course have future goals that are the reasons why I attend KSU. One of my current goals is to land an
+                        internship position at any company. I'm flexible about which roles I want but I predominantly want to get involved with web development, UI/UX, networking, and data management.
+                        From there on out, I'd love to work my way to an entry level position and higher positions in the future. Another one of my common goals at the moment is to get cerfication. I'm
+                        aiming for the CompTIA A+ right now. I really want my skills to further advance so I can be successful within this industry!
+                    </p>
+                    <br />
+                    <h3 style="color: #30AFC5; ">Outside School</h3>
+                    <p>
+                        When I'm not spending my time at KSU or my workplace, I have other hobbies and things to keep me preoccupied. I am a lover of books, more specifically, mystery and thrillers.
+                        I also have a lovely dog, that I love to take care of. When the weather gets warmer, I like to garden. I'm sort of a beginner but I look forward to seeing what kinds of plants
+                        and flowers that will bloom. Although I don't do this next one very often, it is something I cherish. I love traveling! I'm naturally a curious person, so exploring and getting
+                        to experience new cultures is so exciting to me! I've traveled to countries in Europe and Asia so far, but I hope to expand and travel to more countries in the future.
+                        Most times, you'll find me listening to music. The genres I listen to are always fluctuating but you can bet that I'm listening to classical music. I also enjoy going to see ballets,
+                        musicals, operas, and museums.
+                    </p>
+                </div>
+                <!--"Footer grid object: Page footer"-->
+                <div class="footer">
+                    <p> Copyright &copy; 2025 | Brakittra Tobtaen</p>
+                    <p> Disclaimer: This is a student project made for a web development course.</p>
+                    <p> KSU is not directly affiliated with with this project.</p>
+                </div>
+            </div>
+        </main>
+
+    <!--Javascript for Responsive Navigation Bar-->
+    <script>
+        function topNav() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += "responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+</body>
+</html>
